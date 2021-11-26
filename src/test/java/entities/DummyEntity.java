@@ -1,3 +1,5 @@
+package entities;
+
 import generics.IGenericEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
