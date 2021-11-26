@@ -7,6 +7,7 @@ import static java.util.Objects.isNull;
 /**
  * Util for dealing with objects.
  */
+@SuppressWarnings({"unused"})
 public final class ObjectUtils {
 	/**
 	 * @param supplier A supplier that can throw a NullPointerException when accessed.
