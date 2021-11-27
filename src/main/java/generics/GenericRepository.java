@@ -154,16 +154,6 @@ public class GenericRepository<T, S extends Serializable> extends SimpleJpaRepos
 		return entity;
 	}
 
-	@Override
-	@Transactional
-	public T persisOrUpdateNonNullFields(T entity) throws NoSuchFieldException, GenericException {
-		List<Field> fieldsToUpdate = getUpdatableFields(entity);
-
-		update(entity, fieldsToUpdate);
-
-		return entity;
-	}
-
 	private List<T> persistOrUpdate(List<T> entities, boolean updateNonNullFields) {
 		List<T> result = new ArrayList<>();
 
@@ -182,6 +172,16 @@ public class GenericRepository<T, S extends Serializable> extends SimpleJpaRepos
 		});
 
 		return result;
+	}
+
+	@Override
+	@Transactional
+	public T persisOrUpdateNonNullFields(T entity) throws NoSuchFieldException, GenericException {
+		List<Field> fieldsToUpdate = getUpdatableFields(entity);
+
+		update(entity, fieldsToUpdate);
+
+		return entity;
 	}
 
 	@Override
