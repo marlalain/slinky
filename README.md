@@ -23,6 +23,3 @@ The generic classes slinky provides are going to allow developers to create Spri
 ### Branches
 
 Currently we have two branches; `dev` and `main`. `Main` is a protected branch that will auto-deploy to central maven so you shouldn't even try pushing directly to it. `Dev` is the branch to make pull requests to.
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpaulo-e%2Fslinky.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpaulo-e%2Fslinky?ref=badge_large)
