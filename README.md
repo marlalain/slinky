@@ -15,9 +15,7 @@ A generic library for quick development in Spring Boot using Java Generics.
 ## Why "slinky"?
 
 <a href="https://en.wikipedia.org/wiki/Slinky">
-    <img align="right" width="40%" src="https://upload.wikimedia.
-org/wikipedia/commons/thumb/f/f3/2006-02-04_Metal_spiral.
-jpg/800px-2006-02-04_Metal_spiral.jpg" alt="A slinky (toy)">
+    <img align="right" width="40%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/2006-02-04_Metal_spiral.jpg/800px-2006-02-04_Metal_spiral.jpg" alt="A slinky (toy)">
 </a>
 
 A slinky is a precompressed helical spring toy invented by Richard James in the early 1940s.
