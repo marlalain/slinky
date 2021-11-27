@@ -2,9 +2,6 @@
 
 <p align="center">
 
-<img src="https://img.shields.io/badge/language-PT--BR-brightgreen?style=flat">
-<img src="https://img.shields.io/badge/language-EN-green?style=flat">
-
 <a href="https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml"><img src="https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml/badge.svg"></a>
 <a href="https://github.com/paulo-e/slinky/actions/workflows/main.yml"><img src="https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg"></a>
 
