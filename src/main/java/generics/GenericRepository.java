@@ -93,6 +93,22 @@ public class GenericRepository<T, S extends Serializable> extends SimpleJpaRepos
 		query.executeUpdate();
 	}
 
+	@Override
+	@Transactional
+	public void update(T entity, String... fields) throws NoSuchFieldException, GenericException {
+		List<Field> fieldsToUpdate = new ArrayList<>();
+
+		StringUtils.toList(fields).forEach(field -> {
+			try {
+				fieldsToUpdate.add(entity.getClass().getDeclaredField(String.valueOf(field)));
+			} catch (NoSuchFieldException | SecurityException e) {
+				throw new ServerErrorException("Invalid specified field" + e.getMessage(), e.getCause());
+			}
+		});
+
+		update(entity, fieldsToUpdate);
+	}
+
 	private void handleEmbeddedAttribute(T entity, CriteriaUpdate<T> criteria, Root<T> root, Field field) throws GenericException {
 		List<Field> embeddedFields = Arrays.asList(field.getType().getDeclaredFields());
 
@@ -110,22 +126,6 @@ public class GenericRepository<T, S extends Serializable> extends SimpleJpaRepos
 				}
 			});
 		}
-	}
-
-	@Override
-	@Transactional
-	public void update(T entity, String... fields) throws NoSuchFieldException, GenericException {
-		List<Field> fieldsToUpdate = new ArrayList<>();
-
-		StringUtils.toList(fields).forEach(field -> {
-			try {
-				fieldsToUpdate.add(entity.getClass().getDeclaredField(String.valueOf(field)));
-			} catch (NoSuchFieldException | SecurityException e) {
-				throw new ServerErrorException("Invalid specified field" + e.getMessage(), e.getCause());
-			}
-		});
-
-		update(entity, fieldsToUpdate);
 	}
 
 	@Override
@@ -164,18 +164,6 @@ public class GenericRepository<T, S extends Serializable> extends SimpleJpaRepos
 		return entity;
 	}
 
-	@Override
-	@Transactional
-	public List<T> persistOrUpdate(List<T> entities) {
-		return persistOrUpdate(entities, false);
-	}
-
-	@Override
-	@Transactional
-	public List<T> persistOrUpdateNonNullFields(List<T> entities) {
-		return persistOrUpdate(entities, true);
-	}
-
 	private List<T> persistOrUpdate(List<T> entities, boolean updateNonNullFields) {
 		List<T> result = new ArrayList<>();
 
@@ -194,6 +182,18 @@ public class GenericRepository<T, S extends Serializable> extends SimpleJpaRepos
 		});
 
 		return result;
+	}
+
+	@Override
+	@Transactional
+	public List<T> persistOrUpdate(List<T> entities) {
+		return persistOrUpdate(entities, false);
+	}
+
+	@Override
+	@Transactional
+	public List<T> persistOrUpdateNonNullFields(List<T> entities) {
+		return persistOrUpdate(entities, true);
 	}
 
 	private Session getSession() {
