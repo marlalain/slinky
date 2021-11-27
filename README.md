@@ -2,9 +2,9 @@
 
 <p align="center">
 
-<a href="https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml"><img src="https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml/badge.svg"></a>
-<a href="https://github.com/paulo-e/slinky/actions/workflows/main.yml"><img src="https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg"></a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fpaulo-e%2Fslinky?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpaulo-e%2Fslinky.svg?type=shield"/></a>
+[![CodeFactor](https://www.codefactor.io/repository/github/paulo-e/slinky/badge)](https://www.codefactor.io/repository/github/paulo-e/slinky)
+[![GitHub Actions](https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg)](https://github.com/paulo-e/slinky/actions/workflows/main.yml)
+[![CodeQL](https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml)
 
 A generic library for quick development in Spring Boot using Java Generics.
 
