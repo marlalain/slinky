@@ -3,7 +3,6 @@
 <p align="center">
 
 [![CodeFactor](https://www.codefactor.io/repository/github/paulo-e/slinky/badge)](https://www.codefactor.io/repository/github/paulo-e/slinky)
-[![codecov](https://codecov.io/gh/paulo-e/slinky/branch/dev/graph/badge.svg?token=51LJ22CUF8)](https://codecov.io/gh/paulo-e/slinky)
 [![GitHub Actions](https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg)](https://github.com/paulo-e/slinky/actions/workflows/main.yml)
 [![CodeQL](https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml)
 
