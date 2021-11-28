@@ -1,14 +1,5 @@
 name: tests
-
-on:
-  push:
-    branches: [ dev ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ dev, main ]
-  schedule:
-    - cron: '00 2 * * 4'
-
+on: push
 jobs:
   run_tests:
     runs-on: ubuntu-latest
