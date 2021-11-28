@@ -2,6 +2,8 @@ name: tests-dev
 on:
   push:
     branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
 jobs:
   run_tests:
     runs-on: ubuntu-latest
