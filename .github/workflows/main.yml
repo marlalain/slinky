@@ -21,3 +21,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
+      - name: Deletes old packages
+        uses: actions/delete-package-versions@v2
+        with:
+          min-versions-to-keep: 2
