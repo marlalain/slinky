@@ -1,11 +1,11 @@
-name: tests-dev
+name: package-deploy
+
 on:
   push:
-    branches: [ dev ]
-  pull_request:
-    branches: [ dev ]
+    branches: [ main ]
+
 jobs:
-  run_tests:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -21,5 +21,5 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Run tests with Maven
-        run: mvn -B clean verify test jacoco:report coveralls:report --file pom.xml
+      - name: Deploy to GitHub
+        run: mvn deploy -Dregistry=https://maven.pkg.github.com/paulo-e -Dtoken=${MAVEN_GITHUB_DEPLOY}
