@@ -28,6 +28,7 @@
         <spring.boot.version>2.6.0</spring.boot.version>
         <spring.native.version>0.10.5</spring.native.version>
         <jasmine.serverPort>8234</jasmine.serverPort>
+        <revision>1.0-beta</revision>
     </properties>
     <dependencies>
         <dependency>
