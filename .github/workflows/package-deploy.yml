@@ -28,4 +28,4 @@ jobs:
         working-directory: .
         run: |
           NEW_VERSION=$(docker run --rm -v $(pwd):/repo codacy/git-version)
-          mvn deploy -Dmaven.test.skip=true -Drevision=$NEW_VERSION -Dregistry=https://maven.pkg.github.com/paulo-e/slinky -Dtoken=${{secrets.GITHUB_DEPLOY }}
+          mvn deploy -Dmaven.test.skip=true -Drevision=$NEW_VERSION -Dregistry=https://maven.pkg.github.com/paulo-e/slinky -Dtoken=${{ secrets.MAVEN_GITHUB_DEPLOY }}
