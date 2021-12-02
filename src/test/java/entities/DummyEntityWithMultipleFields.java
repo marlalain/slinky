@@ -12,11 +12,19 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DummyEntity implements IGenericEntity<DummyEntity, Long> {
+@Getter
+@Setter
+public class DummyEntityWithMultipleFields implements IGenericEntity<DummyEntityWithMultipleFields, Long> {
+
 	@Id
 	private Long id;
+	private String name;
+	private String occupation;
+
+	@Override
+	public Long getId() {
+		return this.id;
+	}
 }
