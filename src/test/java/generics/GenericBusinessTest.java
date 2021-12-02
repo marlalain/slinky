@@ -14,6 +14,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -130,6 +132,10 @@ class GenericBusinessTest {
 
 	@Test
 	void findAll() {
+		DummyEntity dummyEntity = new DummyEntity(1L);
+		business.persist(dummyEntity);
+		List<DummyEntity> dummyEntityList = business.findAll();
+		assertTrue(dummyEntityList.size() > 0);
 	}
 
 	@Test
