@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
-public class GenericBusiness<T, S extends Serializable> implements IGenericRepository<T, S> {
+public class GenericBusiness<T, S extends Serializable> implements IGenericBusiness<T, S> {
 
 	@Autowired
 	private GenericRepository<T, S> repository;
