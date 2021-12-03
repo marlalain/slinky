@@ -12,7 +12,7 @@
     </licenses>
     <artifactId>slinky</artifactId>
     <groupId>com.pauloelienay</groupId>
-    <version>${revision}</version>
+    <version>1.0-BETA-2a</version>
     <url>https://github.com/paulo-e/slinky</url>
     <contributors>
         <contributor>
@@ -28,7 +28,6 @@
         <spring.boot.version>2.6.0</spring.boot.version>
         <spring.native.version>0.10.5</spring.native.version>
         <jasmine.serverPort>8234</jasmine.serverPort>
-        <revision>1.0-beta</revision>
     </properties>
     <dependencies>
         <dependency>
