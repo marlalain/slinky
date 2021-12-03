@@ -25,7 +25,5 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Deploy to GitHub
-        working-directory: .
         run: |
-          NEW_VERSION=$(docker run --rm -v $(pwd):/repo codacy/git-version)
-          mvn deploy -Dmaven.test.skip=true -Drevision=$NEW_VERSION -Dregistry=https://maven.pkg.github.com/paulo-e/slinky -Dtoken=${{ secrets.MAVEN_GITHUB_DEPLOY }}
+          mvn deploy -Dmaven.test.skip=true -Dregistry=https://maven.pkg.github.com/paulo-e/slinky -Dtoken=${{ secrets.MAVEN_GITHUB_DEPLOY }}
