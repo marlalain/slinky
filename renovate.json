@@ -23,6 +23,6 @@
     }
   ],
   "baseBranches": [
-    "dev"
+    "main"
   ]
 }
