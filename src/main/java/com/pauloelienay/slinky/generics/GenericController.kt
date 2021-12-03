@@ -3,7 +3,7 @@ package com.pauloelienay.slinky.generics
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-class GenericController<T : IGenericEntity<S>, S>
+open class GenericController<T : IGenericEntity<S>, S>
     (private val business: IGenericBusiness<T, S>) : IGenericController<T, S> {
 
     @PostMapping

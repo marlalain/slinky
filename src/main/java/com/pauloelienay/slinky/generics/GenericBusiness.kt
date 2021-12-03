@@ -3,7 +3,7 @@ package com.pauloelienay.slinky.generics
 import com.pauloelienay.slinky.generics.exceptions.EntityNotFoundException
 import java.util.*
 
-class GenericBusiness<T : IGenericEntity<S>, S>
+open class GenericBusiness<T : IGenericEntity<S>, S>
     (private val repository: IGenericRepository<T, S>) : IGenericBusiness<T, S> {
 
     override fun save(entity: T): T {
