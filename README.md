@@ -2,7 +2,7 @@
 
 # slinky
 
-Porting to kotlin!
+*Now in Kotlin!*
 
 <img alt="GitHub" src="https://img.shields.io/github/license/paulo-e/slinky" />
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/paulo-e/slinky" />
