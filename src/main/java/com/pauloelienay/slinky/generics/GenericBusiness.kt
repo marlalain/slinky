@@ -1,6 +1,6 @@
 package com.pauloelienay.slinky.generics
 
-import com.pauloelienay.slinky.generics.exceptions.EntityNotFoundException
+import com.pauloelienay.slinky.exceptions.EntityNotFoundException
 import java.util.Optional
 
 open class GenericBusiness<T : IGenericEntity<S>, S>

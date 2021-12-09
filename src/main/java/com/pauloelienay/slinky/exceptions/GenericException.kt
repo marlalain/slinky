@@ -1,4 +1,4 @@
-package com.pauloelienay.slinky.generics.exceptions
+package com.pauloelienay.slinky.exceptions
 
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ResponseStatus
