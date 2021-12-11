@@ -2,17 +2,13 @@
 
 # slinky
 
-*Now in Kotlin!*
-
-**WIP: HTTP PATCH method!**
+*Now with `HTTP PATCH`!*
 
 <img alt="GitHub" src="https://img.shields.io/github/license/paulo-e/slinky" />
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/paulo-e/slinky" />
 
 <a href="https://www.codefactor.io/repository/github/paulo-e/slinky"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/paulo-e/slinky/badge"/></a>
 <a href="https://github.com/paulo-e/slinky/actions/workflows/main.yml"><img alt="GitHub Actions" src="https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg"/></a>
-<a href="https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml"><img alt="GitHub Actions" src="https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml/badge.svg"/></a>
-<a href='https://coveralls.io/github/paulo-e/slinky?branch=main'><img src='https://coveralls.io/repos/github/paulo-e/slinky/badge.svg?branch=main' alt='Coverage Status' /></a>
 
 Library for quick development in Spring Boot using Java Generics.
 
