@@ -1,6 +1,6 @@
 package com.pauloelienay.slinky.generics
 
-import java.util.Optional
+import java.util.*
 
 interface IGenericBusiness<T : IGenericEntity<S>, S> {
 	fun save(entity: T): T

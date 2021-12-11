@@ -12,19 +12,19 @@ open class GenericRepository<T : IGenericEntity<S>, S>(
 	private val entityManager: EntityManager
 ) : IGenericRepository<T, S>, JpaRepository<T, S>,
 	SimpleJpaRepository<T, S>(clazz, entityManager) {
-	
+
 	@Transactional
 	override fun updateNonNullFields(entity: T) {
 		val builder = entityManager.criteriaBuilder
 		val criteria = builder.createCriteriaUpdate(clazz)
 		val root = criteria.from(clazz)
-		
-		clazz.nonNullFieldsFromEntity(entity).forEach{
+
+		clazz.nonNullFieldsFromEntity(entity).forEach {
 			criteria.set(root.get(it.name), it.value(entity))
 		}
-		
+
 		criteria.where(builder.equal(root.get<T>("id"), entity.id))
-		
+
 		entityManager.createQuery(criteria).executeUpdate()
 	}
 }
