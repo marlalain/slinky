@@ -28,6 +28,12 @@ A slinky is a precompressed helical spring toy invented by Richard James in the 
 
 The generic classes slinky provides are going to allow developers to create Spring Boot applications at record speed.
 
+## What slinky provides to every resource?
+
+Currently, slinky provides `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD` and `OPTIONS` for single resource 
+gathering. Retrieving lists and pages are not supported yet. Right now we only operate in REST but adding RESTful 
+classes is on the todo list.
+
 ## Contributing
 
 ### Branches
