@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
 
 open class GenericController<T : IGenericEntity<S>, S>
 	(private val business: IGenericBusiness<T, S>) : IGenericController<T, S> {
@@ -38,5 +40,11 @@ open class GenericController<T : IGenericEntity<S>, S>
 	@GetMapping("{id}")
 	override fun getById(@PathVariable id: S): ResponseEntity<T> {
 		return ResponseEntity.ok(business.getById(id))
+	}
+	
+	@RequestMapping("{id}", method = [RequestMethod.HEAD])
+	override fun headById(@PathVariable id: S): ResponseEntity<T> {
+		return business.headById(id)
+			.let { ResponseEntity.ok().build() }
 	}
 }

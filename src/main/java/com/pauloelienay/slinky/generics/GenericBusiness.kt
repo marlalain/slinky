@@ -21,7 +21,7 @@ open class GenericBusiness<T : IGenericEntity<S>, S>
 	}
 	
 	override fun justUpdate(entity: T, id: S) {
-		getById(id)
+		headById(id)
 		entity.id = id
 		repository.save(entity)
 	}
@@ -32,12 +32,17 @@ open class GenericBusiness<T : IGenericEntity<S>, S>
 	}
 	
 	override fun deleteById(id: S) {
-		getById(id)
+		headById(id)
 		repository.deleteById(id)
 	}
 	
 	override fun getById(id: S): T {
 		return repository.findById(id)
 			.orElseThrow { throw EntityNotFoundException() }
+	}
+	
+	override fun headById(id: S): Boolean {
+		if (repository.existsById(id)) return true
+		else throw EntityNotFoundException()
 	}
 }
