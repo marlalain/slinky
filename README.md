@@ -2,7 +2,7 @@
 
 # slinky
 
-*Now with `HTTP PATCH`!*
+*Now with HTTP `PATCH` and `HEAD`!*
 
 <img alt="GitHub" src="https://img.shields.io/github/license/paulo-e/slinky" />
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/paulo-e/slinky" />
@@ -22,21 +22,16 @@ Library for quick development in Spring Boot using Java Generics.
     <img align="right" width="40%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/2006-02-04_Metal_spiral.jpg/800px-2006-02-04_Metal_spiral.jpg" alt="A slinky (toy)">
 </a>
 
-A slinky is a precompressed helical spring toy invented by Richard James in the early 1940s.
+A slinky is a precompressed helical spring toy invented by Richard James in the early 1940s. And "Spring" is the 
+framework that this library is built upon.
 
 ## But why use slinky?
 
-The generic classes slinky provides are going to allow developers to create Spring Boot applications at record speed.
+The (java!) generic classes slinky provides are going to allow developers to create Spring Boot applications at record 
+speed.
 
 ## What slinky provides to every resource?
 
 Currently, slinky provides `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD` and `OPTIONS` for single resource 
 gathering. Retrieving lists and pages are not supported yet. Right now we only operate in REST but adding RESTful 
 classes is on the todo list.
-
-## Contributing
-
-### Branches
-
-Currently, we have two branches; `dev` and `main`. `Main` is a protected branch that will auto-deploy to central maven
-so you shouldn't even try pushing directly to it. `Dev` is the branch to make pull requests to.
