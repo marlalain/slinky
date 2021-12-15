@@ -27,7 +27,7 @@
         <spring.boot.version>2.6.1</spring.boot.version>
         <spring.native.version>0.10.5</spring.native.version>
         <jasmine.serverPort>8234</jasmine.serverPort>
-        <kotlin.version>1.6.0</kotlin.version>
+        <kotlin.version>1.6.10</kotlin.version>
     </properties>
     <dependencies>
         <dependency>
