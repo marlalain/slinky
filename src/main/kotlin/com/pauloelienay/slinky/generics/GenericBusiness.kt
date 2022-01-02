@@ -45,6 +45,14 @@ open class GenericBusiness<T : IGenericEntity<S>, S>
 			.orElseThrow { throw EntityNotFoundException() }
 	}
 
+	override fun getChildById(id: S, child: String): Any? {
+		val entity = getById(id)
+		val field = entity.javaClass.declaredFields.find { it.name.equals(child) }
+
+		field?.isAccessible = true
+		return field?.get(entity)
+	}
+
 	override fun headById(id: S): Boolean {
 		if (repository.existsById(id)) return true
 		else throw EntityNotFoundException()

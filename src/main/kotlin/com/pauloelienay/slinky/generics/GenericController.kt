@@ -1,5 +1,6 @@
 package com.pauloelienay.slinky.generics
 
+import com.pauloelienay.slinky.exceptions.ChildEntityNotFoundException
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -45,6 +46,16 @@ open class GenericController<T : IGenericEntity<S>, S>
 	@GetMapping("{id}")
 	override fun getById(@PathVariable id: S): ResponseEntity<T> {
 		return ResponseEntity.ok(business.getById(id))
+	}
+
+	@GetMapping("{id}/{child}")
+	override fun getChildById(@PathVariable id: S, @PathVariable child: String): ResponseEntity<Any> {
+		val childValue = business.getChildById(id, child)
+		childValue?.let {
+			return ResponseEntity.ok(childValue)
+		}
+
+		throw ChildEntityNotFoundException()
 	}
 
 	@RequestMapping("{id}", method = [RequestMethod.HEAD])
