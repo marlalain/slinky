@@ -6,6 +6,10 @@ import java.util.*
 open class GenericBusiness<T : IGenericEntity<S>, S>
 	(private val repository: IGenericRepository<T, S>) : IGenericBusiness<T, S> {
 
+	override fun findAll(): List<T> {
+		return repository.findAll().toList()
+	}
+
 	override fun save(entity: T): T {
 		return repository.save(entity)
 	}

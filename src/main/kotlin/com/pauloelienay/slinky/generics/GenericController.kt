@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod
 open class GenericController<T : IGenericEntity<S>, S>
 	(private val business: IGenericBusiness<T, S>) : IGenericController<T, S> {
 
+	@GetMapping
+	override fun findAll(): ResponseEntity<List<T>> {
+		return ResponseEntity.ok(business.findAll())
+	}
+
 	@PostMapping
 	override fun save(@RequestBody entity: T): ResponseEntity<T> {
 		return ResponseEntity.ok(business.save(entity))

@@ -3,6 +3,7 @@ package com.pauloelienay.slinky.generics
 import java.util.*
 
 interface IGenericBusiness<T : IGenericEntity<S>, S> {
+	fun findAll(): List<T>
 	fun save(entity: T): T
 	fun justSave(entity: T)
 	fun update(entity: T, id: S): Optional<T>
