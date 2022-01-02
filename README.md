@@ -2,7 +2,7 @@
 
 # slinky
 
-*Now with HTTP `PATCH` and `HEAD`!*
+*Now with `GET` entities!*
 
 <img alt="GitHub" src="https://img.shields.io/github/license/paulo-e/slinky" />
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/paulo-e/slinky" />
@@ -32,6 +32,5 @@ speed.
 
 ## What slinky provides to every resource?
 
-Currently, slinky provides `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD` and `OPTIONS` for single resource 
-gathering. Retrieving lists and pages is not supported yet. Right now we only operate in REST but adding RESTful 
-classes is on the todo list.
+Currently, slinky provides `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD` and `OPTIONS` for resource(s) 
+gathering(s). Right now we only operate in REST but adding RESTful classes is on the todo list.
