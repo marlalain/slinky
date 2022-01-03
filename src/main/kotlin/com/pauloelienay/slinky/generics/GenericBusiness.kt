@@ -1,13 +1,31 @@
 package com.pauloelienay.slinky.generics
 
 import com.pauloelienay.slinky.exceptions.EntityNotFoundException
-import java.util.*
+import com.pauloelienay.slinky.extensions.value
+import java.util.Optional
 
 open class GenericBusiness<T : IGenericEntity<S>, S>
 	(private val repository: IGenericRepository<T, S>) : IGenericBusiness<T, S> {
 
 	override fun findAll(): List<T> {
 		return repository.findAll().toList()
+	}
+
+	override fun findById(id: S): T {
+		return repository.findById(id)
+			.orElseThrow { throw EntityNotFoundException() }
+	}
+
+	override fun findChildById(id: S, child: String): Any? {
+		val entity = findById(id)
+		val field = entity.javaClass.declaredFields.find { it.name.equals(child) }
+
+		field?.let {
+			it.isAccessible = true
+			return it.value(entity)
+		}
+
+		return null
 	}
 
 	override fun save(entity: T): T {
@@ -25,7 +43,7 @@ open class GenericBusiness<T : IGenericEntity<S>, S>
 	}
 
 	override fun justUpdate(entity: T, id: S) {
-		headById(id)
+		existsById(id)
 		entity.id = id
 		repository.save(entity)
 	}
@@ -36,24 +54,11 @@ open class GenericBusiness<T : IGenericEntity<S>, S>
 	}
 
 	override fun deleteById(id: S) {
-		headById(id)
+		existsById(id)
 		repository.deleteById(id)
 	}
 
-	override fun getById(id: S): T {
-		return repository.findById(id)
-			.orElseThrow { throw EntityNotFoundException() }
-	}
-
-	override fun getChildById(id: S, child: String): Any? {
-		val entity = getById(id)
-		val field = entity.javaClass.declaredFields.find { it.name.equals(child) }
-
-		field?.isAccessible = true
-		return field?.get(entity)
-	}
-
-	override fun headById(id: S): Boolean {
+	override fun existsById(id: S): Boolean {
 		if (repository.existsById(id)) return true
 		else throw EntityNotFoundException()
 	}

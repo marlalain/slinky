@@ -20,6 +20,21 @@ open class GenericController<T : IGenericEntity<S>, S>
 		return ResponseEntity.ok(business.findAll())
 	}
 
+	@GetMapping("{id}")
+	override fun findById(@PathVariable id: S): ResponseEntity<T> {
+		return ResponseEntity.ok(business.findById(id))
+	}
+
+	@GetMapping("{id}/{child}")
+	override fun findChildById(@PathVariable id: S, @PathVariable child: String): ResponseEntity<Any> {
+		val childValue = business.findChildById(id, child)
+		childValue?.let {
+			return ResponseEntity.ok(childValue)
+		}
+
+		throw ChildEntityNotFoundException()
+	}
+
 	@PostMapping
 	override fun save(@RequestBody entity: T): ResponseEntity<T> {
 		return ResponseEntity.ok(business.save(entity))
@@ -43,24 +58,9 @@ open class GenericController<T : IGenericEntity<S>, S>
 			.let { ResponseEntity.noContent().build() }
 	}
 
-	@GetMapping("{id}")
-	override fun getById(@PathVariable id: S): ResponseEntity<T> {
-		return ResponseEntity.ok(business.getById(id))
-	}
-
-	@GetMapping("{id}/{child}")
-	override fun getChildById(@PathVariable id: S, @PathVariable child: String): ResponseEntity<Any> {
-		val childValue = business.getChildById(id, child)
-		childValue?.let {
-			return ResponseEntity.ok(childValue)
-		}
-
-		throw ChildEntityNotFoundException()
-	}
-
 	@RequestMapping("{id}", method = [RequestMethod.HEAD])
-	override fun headById(@PathVariable id: S): ResponseEntity<T> {
-		return business.headById(id)
+	override fun existsById(@PathVariable id: S): ResponseEntity<T> {
+		return business.existsById(id)
 			.let { ResponseEntity.ok().build() }
 	}
 }
