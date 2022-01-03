@@ -29,7 +29,7 @@ open class GenericController<T : IGenericEntity<S>, S>
 	override fun findChildById(@PathVariable id: S, @PathVariable child: String): ResponseEntity<Any> {
 		val childValue = business.findChildById(id, child)
 		childValue?.let {
-			return ResponseEntity.ok(childValue)
+			return ResponseEntity.ok(it)
 		}
 
 		throw ChildEntityNotFoundException()

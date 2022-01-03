@@ -60,6 +60,6 @@ open class GenericBusiness<T : IGenericEntity<S>, S>
 
 	override fun existsById(id: S): Boolean {
 		if (repository.existsById(id)) return true
-		else throw EntityNotFoundException()
+		throw EntityNotFoundException()
 	}
 }
