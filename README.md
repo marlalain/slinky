@@ -35,4 +35,4 @@ speed.
 ## What slinky provides to every resource?
 
 Currently, slinky provides `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD` and `OPTIONS` for resource(s) 
-gathering(s). Right now we only operate in REST but adding RESTful classes is on the todo list.
+gathering(s). Right now we only operate in REST but adding RESTful classes to inherit from is on the todo list.
