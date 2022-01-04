@@ -1,9 +1,9 @@
 package com.pauloelienay.slinky.extensions
 
-import org.springframework.util.ReflectionUtils
 import java.lang.reflect.Field
 import javax.persistence.Embedded
 import javax.persistence.Id
+import org.springframework.util.ReflectionUtils
 
 val Field.isEmbedded: Boolean
 	get() = this.isAnnotationPresent(Embedded::class.java)

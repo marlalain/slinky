@@ -2,10 +2,10 @@ package com.pauloelienay.slinky.generics
 
 import com.pauloelienay.slinky.extensions.nonNullFieldsFromEntity
 import com.pauloelienay.slinky.extensions.value
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.data.jpa.repository.support.SimpleJpaRepository
 import javax.persistence.EntityManager
 import javax.transaction.Transactional
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository
 
 open class GenericRepository<T : IGenericEntity<S>, S>(
 	private val clazz: Class<T>,

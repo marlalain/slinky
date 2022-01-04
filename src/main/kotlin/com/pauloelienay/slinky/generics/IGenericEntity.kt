@@ -1,8 +1,8 @@
 package com.pauloelienay.slinky.generics
 
 import com.pauloelienay.slinky.extensions.isId
-import org.springframework.beans.BeanUtils
 import java.lang.reflect.Field
+import org.springframework.beans.BeanUtils
 
 interface IGenericEntity<S> {
 	var id: S?
