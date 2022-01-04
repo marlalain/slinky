@@ -4,8 +4,10 @@
 
 *Now with `GET` entities!*
 
+<a href="https://discord.gg/BmnxRpbt53"><img alt="Slinky Discord Server" src="https://img.shields.io/discord/918997996660740157?style=flat" /></a>
 <img alt="GitHub" src="https://img.shields.io/github/license/paulo-e/slinky" />
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/paulo-e/slinky" />
+
 
 <a href="https://www.codefactor.io/repository/github/paulo-e/slinky"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/paulo-e/slinky/badge"/></a>
 <a href="https://github.com/paulo-e/slinky/actions/workflows/main.yml"><img alt="GitHub Actions" src="https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg"/></a>
@@ -33,4 +35,4 @@ speed.
 ## What slinky provides to every resource?
 
 Currently, slinky provides `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD` and `OPTIONS` for resource(s) 
-gathering(s). Right now we only operate in REST but adding RESTful classes is on the todo list.
+gathering(s). Right now we only operate in REST but adding RESTful classes to inherit from is on the todo list.
