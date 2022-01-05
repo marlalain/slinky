@@ -3,17 +3,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <name>slinky</name>
+    <artifactId>slinky</artifactId>
+    <groupId>com.pauloelienay</groupId>
     <description>A generic library for quick development in Spring Boot using Java Generics</description>
+    <version>0.14</version>
+    <url>https://github.com/paulo-e/slinky</url>
     <licenses>
         <license>
             <name>BSD-3-Clause</name>
             <url>https://raw.githubusercontent.com/paulo-e/slinky/main/LICENSE</url>
         </license>
     </licenses>
-    <artifactId>slinky</artifactId>
-    <groupId>com.pauloelienay</groupId>
-    <version>0.14</version>
-    <url>https://github.com/paulo-e/slinky</url>
     <contributors>
         <contributor>
             <name>Paulo Elienay</name>
@@ -23,7 +23,6 @@
     </contributors>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
         <spring.boot.version>2.6.2</spring.boot.version>
         <spring.native.version>0.10.5</spring.native.version>
         <jasmine.serverPort>8234</jasmine.serverPort>
@@ -97,6 +96,14 @@
         </plugins>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
                 <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -106,10 +113,6 @@
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.2.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
@@ -143,4 +146,11 @@
             </plugins>
         </pluginManagement>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>paulo-e</name>
+            <url>https://maven.pkg.github.com/paulo-e/slinky</url>
+        </repository>
+    </distributionManagement>
 </project>
