@@ -12,7 +12,7 @@
 <a href="https://www.codefactor.io/repository/github/paulo-e/slinky"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/paulo-e/slinky/badge"/></a>
 <a href="https://github.com/paulo-e/slinky/actions/workflows/main.yml"><img alt="GitHub Actions" src="https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg"/></a>
 
-Library for quick development in Spring Boot using Java Generics.
+Library for quick development in Spring Boot using Java Generics and Relection.
 
 </div>
 
