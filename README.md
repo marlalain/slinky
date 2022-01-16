@@ -2,8 +2,6 @@
 
 # slinky
 
-*Now with `GET` entities!*
-
 <a href="https://discord.gg/BmnxRpbt53"><img alt="Slinky Discord Server" src="https://img.shields.io/discord/918997996660740157?style=flat" /></a>
 <img alt="GitHub" src="https://img.shields.io/github/license/paulo-e/slinky" />
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/paulo-e/slinky" />
