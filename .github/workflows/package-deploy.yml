@@ -21,5 +21,10 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
+      - name: Git Version
+        uses: codacy/git-version@2.4.0
+        with:
+          prefix: beta-
+          log-path: beta/
       - name: Deploy to GitHub
-        run: mvn deploy -Dregistry=https://maven.pkg.github.com/paulo-e -Dtoken=${{ secrets.GITHUB_DEPLOY }}
+        run: mvn deploy -Dmaven.test.skip=true -Drevision=`./git-version` -Dregistry=https://maven.pkg.github.com/paulo-e/slinky -Dtoken=${{secrets.GITHUB_DEPLOY }}
