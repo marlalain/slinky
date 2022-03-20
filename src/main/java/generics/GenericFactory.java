@@ -1,4 +1,4 @@
-package utils;
+package generics;
 
 import exceptions.GenericException;
 
