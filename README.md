@@ -5,6 +5,8 @@
 ![](https://img.shields.io/badge/language-PT--BR-brightgreen?style=flat)
 ![](https://img.shields.io/badge/language-EN-green?style=flat)
 
+[![CodeQL](https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml)
+
 A generic library for quick development in Spring Boot using Java Generics.
 
 </center>
