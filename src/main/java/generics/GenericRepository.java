@@ -176,18 +176,18 @@ public class GenericRepository<T, S extends Serializable> extends SimpleJpaRepos
 
 	@Override
 	@Transactional
+	public List<T> persistOrUpdate(List<T> entities) {
+		return persistOrUpdate(entities, false);
+	}
+
+	@Override
+	@Transactional
 	public T persisOrUpdateNonNullFields(T entity) throws NoSuchFieldException, GenericException {
 		List<Field> fieldsToUpdate = getUpdatableFields(entity);
 
 		update(entity, fieldsToUpdate);
 
 		return entity;
-	}
-
-	@Override
-	@Transactional
-	public List<T> persistOrUpdate(List<T> entities) {
-		return persistOrUpdate(entities, false);
 	}
 
 	@Override
