@@ -1,6 +1,7 @@
 package utils;
 
 import exceptions.GenericException;
+import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 import java.lang.annotation.Annotation;
@@ -37,7 +38,7 @@ public class ReflectionUtil {
 		return nonNull(field.getAnnotation(Id.class));
 	}
 
-	public static Object getValueByField(Field field, Object entity) throws GenericException {
+	public static Object getValueByField(@NonNull Field field, @NonNull Object entity) throws GenericException {
 		try {
 			field.setAccessible(true);
 			return field.get(entity);
@@ -95,15 +96,23 @@ public class ReflectionUtil {
 	}
 
 	public static boolean isTransient(Field field) {
-		return isFieldAnnotatedWith(field, Transient.class);
+		return field.isAnnotationPresent(Transient.class);
 	}
 
 	public static boolean isEntity(Field field) {
-		return isFieldAnnotatedWith(field, Entity.class);
+		return field.getDeclaringClass().isAnnotationPresent(Entity.class);
+	}
+
+	public static boolean isEntity(Object object) {
+		return object.getClass().isAnnotationPresent(Entity.class);
 	}
 
 	public static boolean isEmbeddable(Field field) {
-		return isFieldAnnotatedWith(field, Embeddable.class);
+		return field.getDeclaringClass().isAnnotationPresent(Embeddable.class);
+	}
+
+	public static boolean isEmbeddable(Object object) {
+		return object.getClass().isAnnotationPresent(Embeddable.class);
 	}
 
 	private static boolean isFieldAnnotatedWith(Field field, Class<? extends Annotation> clazz) {
