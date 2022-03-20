@@ -1,5 +1,7 @@
+package utils;
+
+import entities.DummyEntity;
 import org.junit.Test;
-import utils.EntityUtils;
 
 import static org.junit.Assert.*;
 
