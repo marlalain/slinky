@@ -105,6 +105,21 @@ public class GenericBusiness<T, S extends Serializable> implements IGenericRepos
 	}
 
 	@Override
+	public <ID extends T> List<ID> findAll(Example<ID> example) {
+		return this.repository.findAll(example);
+	}
+
+	@Override
+	public <ID extends T> List<ID> findAll(Example<ID> example, Sort sort) {
+		return this.repository.findAll(example, sort);
+	}
+
+	@Override
+	public <ID extends T> Page<ID> findAll(Example<ID> example, Pageable pageable) {
+		return this.repository.findAll(example, pageable);
+	}
+
+	@Override
 	public List<T> findAllById(Iterable<S> s) {
 		return this.repository.findAllById(s);
 	}
@@ -112,6 +127,11 @@ public class GenericBusiness<T, S extends Serializable> implements IGenericRepos
 	@Override
 	public long count() {
 		return this.repository.count();
+	}
+
+	@Override
+	public <ID extends T> long count(Example<ID> example) {
+		return this.repository.count(example);
 	}
 
 	@Override
@@ -155,13 +175,13 @@ public class GenericBusiness<T, S extends Serializable> implements IGenericRepos
 	}
 
 	@Override
-	public void deleteAllByIdInBatch(Iterable<S> s) {
-		this.repository.deleteAllByIdInBatch(s);
+	public void deleteAllInBatch() {
+		this.repository.deleteAllInBatch();
 	}
 
 	@Override
-	public void deleteAllInBatch() {
-		this.repository.deleteAllInBatch();
+	public void deleteAllByIdInBatch(Iterable<S> s) {
+		this.repository.deleteAllByIdInBatch(s);
 	}
 
 	@Override
@@ -178,26 +198,6 @@ public class GenericBusiness<T, S extends Serializable> implements IGenericRepos
 	@Override
 	public <ID extends T> Optional<ID> findOne(Example<ID> example) {
 		return this.repository.findOne(example);
-	}
-
-	@Override
-	public <ID extends T> List<ID> findAll(Example<ID> example) {
-		return this.repository.findAll(example);
-	}
-
-	@Override
-	public <ID extends T> List<ID> findAll(Example<ID> example, Sort sort) {
-		return this.repository.findAll(example, sort);
-	}
-
-	@Override
-	public <ID extends T> Page<ID> findAll(Example<ID> example, Pageable pageable) {
-		return this.repository.findAll(example, pageable);
-	}
-
-	@Override
-	public <ID extends T> long count(Example<ID> example) {
-		return this.repository.count(example);
 	}
 
 	@Override
