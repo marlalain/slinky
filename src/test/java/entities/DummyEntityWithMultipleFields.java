@@ -1,6 +1,6 @@
 package entities;
 
-import generics.IGenericEntity;
+import com.pauloelienay.slinky.generics.IGenericEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
