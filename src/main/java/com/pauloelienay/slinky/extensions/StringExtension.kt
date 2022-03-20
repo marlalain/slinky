@@ -1,4 +1,4 @@
-package kotlin.com.pauloelienay.slinky.extensions
+package com.pauloelienay.slinky.extensions
 
 val String.isValid: Boolean
     get() = this.isNotBlank() && this.isNotEmpty()
