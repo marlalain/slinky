@@ -5,9 +5,7 @@ import exceptions.GenericException;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.ActiveProfiles;
-import utils.readonly.EmbeddableObject;
-import utils.readonly.ObjectWithSerialVersionField;
-import utils.readonly.ObjectWithTransientField;
+import utils.readonly.*;
 
 import javax.persistence.Id;
 import java.lang.reflect.Field;
@@ -59,6 +57,9 @@ class ReflectionUtilTest {
 
 	@Test
 	void isUpdatable() {
+		ObjectWithUpdatableField object = new ObjectWithUpdatableField("Object");
+		Field field = getFirstFieldFromObject(object);
+		assertTrue(ReflectionUtil.isUpdatable(field));
 	}
 
 	@Test
@@ -67,6 +68,9 @@ class ReflectionUtilTest {
 
 	@Test
 	void isMappedByField() {
+		ObjectWithMappedBy object = new ObjectWithMappedBy();
+		Field field = getFirstFieldFromObject(object);
+		assertTrue(ReflectionUtil.isMappedByField(field));
 	}
 
 	@Test
