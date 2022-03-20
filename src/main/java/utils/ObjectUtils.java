@@ -1,6 +1,5 @@
 package utils;
 
-import java.io.Serializable;
 import java.util.function.Supplier;
 
 import static java.util.Objects.isNull;
