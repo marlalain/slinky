@@ -25,9 +25,9 @@ public interface IGenericRepository<T, S extends Serializable> extends JpaReposi
 
 	T persistOrUpdate(T entity) throws NoSuchFieldException, GenericException;
 
-	T persisOrUpdateNonNullFields(T entity) throws NoSuchFieldException, GenericException;
-
 	List<T> persistOrUpdate(List<T> entities);
+
+	T persisOrUpdateNonNullFields(T entity) throws NoSuchFieldException, GenericException;
 
 	List<T> persistOrUpdateNonNullFields(List<T> entities);
 }
