@@ -2,11 +2,11 @@
 
 <p align="center">
 
-![](https://img.shields.io/badge/language-PT--BR-brightgreen?style=flat)
-![](https://img.shields.io/badge/language-EN-green?style=flat)
+<img src="https://img.shields.io/badge/language-PT--BR-brightgreen?style=flat">
+<img src="https://img.shields.io/badge/language-EN-green?style=flat">
 
-[![CodeQL](https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml)
-[![tests](https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg)](https://github.com/paulo-e/slinky/actions/workflows/main.yml)
+<a href="https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml"><img src="https://github.com/paulo-e/slinky/actions/workflows/codeql-analysis.yml/badge.svg"></a>
+<a href="https://github.com/paulo-e/slinky/actions/workflows/main.yml"><img src="https://github.com/paulo-e/slinky/actions/workflows/main.yml/badge.svg"></a>
 
 A generic library for quick development in Spring Boot using Java Generics.
 
