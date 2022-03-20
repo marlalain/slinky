@@ -91,6 +91,7 @@
                 <version>4.3.0</version>
                 <configuration>
                     <failOnServiceError>false</failOnServiceError>
+                    <repoToken>t01pFihELOw30fVmUP2aHimMbzjoOK2r6</repoToken>
                 </configuration>
                 <dependencies>
                     <dependency> <!-- https://github.com/trautonen/coveralls-maven-plugin/issues/141 -->
