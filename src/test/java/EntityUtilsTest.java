@@ -24,15 +24,13 @@ public class EntityUtilsTest {
 
 	@Test
 	public void shouldSayNonNullIsntNull() {
-		DummyEntity entity = new DummyEntity();
-		entity.setId(1L);
+		DummyEntity entity = new DummyEntity(1L);
 		assertFalse(EntityUtils.isNull(entity));
 	}
 
 	@Test
 	public void shouldSayNonNullIsNonNull() {
-		DummyEntity entity = new DummyEntity();
-		entity.setId(1L);
+		DummyEntity entity = new DummyEntity(1L);
 		assertTrue(EntityUtils.nonNull(entity));
 	}
 
