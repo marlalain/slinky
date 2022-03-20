@@ -5,6 +5,7 @@ import generics.IGenericEntity;
 import java.io.Serializable;
 import java.util.Objects;
 
+@SuppressWarnings({"unused"})
 public final class EntityUtils {
 	/**
 	 * @param entity Entity that can be null.
