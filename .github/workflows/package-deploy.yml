@@ -22,4 +22,4 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Deploy to GitHub
-        run: mvn deploy -Dregistry=https://maven.pkg.github.com/paulo-e -Dtoken=${MAVEN_GITHUB_DEPLOY}
+        run: mvn deploy -Dregistry=https://maven.pkg.github.com/paulo-e -Dtoken=${{ secrets.MAVEN_GITHUB_DEPLOY }}
