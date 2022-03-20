@@ -24,4 +24,5 @@ jobs:
       - name: Deletes old packages
         uses: actions/delete-package-versions@v2
         with:
+          package-name: 'com.pauloelienay.slinky'
           min-versions-to-keep: 2
