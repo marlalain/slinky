@@ -18,4 +18,4 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
-        run: mvn -B clean verify test jacoco:report saga:coverage coveralls:report -DrepoToken=${COVERALLS} --file pom.xml
+        run: mvn -B clean verify test jacoco:report coveralls:report -DrepoToken=${COVERALLS} --file pom.xml
