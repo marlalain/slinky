@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Getter
 @Setter
-public class DummyEntityWithMultipleFields implements IGenericEntity<DummyEntity, Long> {
+public class DummyEntityWithMultipleFields implements IGenericEntity<DummyEntityWithMultipleFields, Long> {
 
 	@Id
 	private Long id;

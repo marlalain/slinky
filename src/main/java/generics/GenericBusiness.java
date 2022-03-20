@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.FluentQuery;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -171,5 +172,10 @@ public class GenericBusiness<T, S extends Serializable> {
 
 	public <ID extends T, R> R findBy(Example<ID> example, Function<FluentQuery.FetchableFluentQuery<ID>, R> queryFunction) {
 		return this.repository.findBy(example, queryFunction);
+	}
+
+	@SuppressWarnings({"unchecked"})
+	public Class<T> getClassType() {
+		return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 	}
 }
