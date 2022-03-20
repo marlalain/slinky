@@ -1,5 +1,28 @@
 {
   "extends": [
     "config:base"
+  ],
+  "assignees": [
+    "paulo-e"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "automerge": true
+    }
+  ],
+  "baseBranches": [
+    "dev"
   ]
 }
