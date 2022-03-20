@@ -1,4 +1,4 @@
-package utils;
+package generics;
 
 import entities.DummyEntity;
 import exceptions.GenericException;
