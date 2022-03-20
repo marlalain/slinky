@@ -16,7 +16,8 @@ import java.util.function.Function;
 
 public class GenericBusiness<T, S extends Serializable> implements IGenericRepository<T, S> {
 
-	@Autowired private GenericRepository<T, S> repository;
+	@Autowired
+	private GenericRepository<T, S> repository;
 
 	@Override
 	public void persist(T entity) {
