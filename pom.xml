@@ -26,7 +26,7 @@
         <spring.boot.version>2.7.5</spring.boot.version>
         <spring.native.version>0.10.5</spring.native.version>
         <jasmine.serverPort>8234</jasmine.serverPort>
-        <kotlin.version>1.7.20</kotlin.version>
+        <kotlin.version>1.7.21</kotlin.version>
     </properties>
     <dependencies>
         <dependency>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-reflect</artifactId>
-            <version>1.7.20</version>
+            <version>1.7.21</version>
         </dependency>
     </dependencies>
     <build>
