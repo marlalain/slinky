@@ -23,7 +23,7 @@ jobs:
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
       - name: Deletes old packages
-        uses: actions/delete-package-versions@v3
+        uses: actions/delete-package-versions@v4
         with:
           package-name: 'com.pauloelienay.slinky'
           min-versions-to-keep: 2
