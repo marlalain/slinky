@@ -23,7 +23,7 @@
     </contributors>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.boot.version>2.7.16</spring.boot.version>
+        <spring.boot.version>2.7.17</spring.boot.version>
         <spring.native.version>0.10.5</spring.native.version>
         <jasmine.serverPort>8234</jasmine.serverPort>
         <kotlin.version>1.9.10</kotlin.version>
